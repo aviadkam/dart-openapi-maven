@@ -98,7 +98,7 @@ public class DartV3ApiGenerator extends DartClientCodegen implements CodegenConf
     isNullSafeEnabled = additionalProperties.containsKey("nullSafe");
 
     this.additionalProperties.put("x-dart-anyparts", extraAnyParts);
-    listAnyOf = additionalProperties.containsKey(LIST_ANY_OF);
+    listAnyOf = !additionalProperties.containsKey(LIST_ANY_OF) && additionalProperties.get(LIST_ANY_OF).equals("false");
   }
 
   /**
